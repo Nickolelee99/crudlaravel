@@ -3,41 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualizar Materia</title>
+    <title>Crear Materia</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Actualizar Materia</h2>
-        <form action="{{ route('materia.update', $materia->id) }}" method="post">
+        <h2>Crear Materia</h2>
+        <form action="{{ route('materia.store') }}" method="post">
             @csrf
-            @method('PUT')
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ old('nombre', $materia->nombre) }}" required>                
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ old('nombre') }}" required>                
             </div>
 
             <div class="form-group">
                 <label for="descripcion">Descripción</label>
-                <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{ old('descripcion', $materia->descripcion) }}" required>
+                <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{ old('descripcion') }}" required>
             </div>
 
             <div class="form-group">
                 <label for="creditos">Creditos</label>
-                <input type="text" class="form-control" id="creditos" name="creditos" value="{{ old('creditos', $materia->creditos) }}" required>
+                <input type="text" class="form-control" id="creditos" name="creditos" value="{{ old('creditos') }}" required>
             </div>
 
             <div class="form-group">
                 <label for="tipo">Tipo</label>
-                <input type="text" class="form-control" id="tipo" name="tipo" value="{{ old('tipo', $materia->tipo) }}" required>
+                <input type="text" class="form-control" id="tipo" name="tipo" value="{{ old('tipo') }}" required>
             </div>
 
             <div class="form-group">
-                <label for="valor">Valor</label>
-                <input type="text" class="form-control" id="valor_hora" name="valor_hora" value="{{ old('valor_hora', $materia->valor_hora) }}" required>
+                <label for="valor_hora">Valor</label>
+                <input type="text" class="form-control" id="valor_hora" name="valor_hora" value="{{ old('valor_hora') }}" required>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Actualizar</button>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" class="form-control" id="estado" name="estado" value="{{ old('estado') }}" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Crear</button>
             <a href="{{ route('materia.index') }}" class="btn btn-primary">Volver</a>
         </form>
     </div>

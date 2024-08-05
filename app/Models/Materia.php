@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Materia extends Model
 {
-    protected $fillable = ['nombre', 'descripcion', 'creditos', 'tipo', 'valor_hora', 'estado'];
+    protected $fillable = [
+        'nombre', 
+        'descripcion', 
+        'creditos', 
+        'tipo', 
+        'valor_hora', 
+        'estado'];
     use HasFactory;
 }
